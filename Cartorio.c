@@ -20,36 +20,36 @@ int registrar() //Função responsavel por cadastrar os usuários no sistema / "int
 	
 	FILE *file; //Cria o arquivo
 	file = fopen(arquivo, "w"); //Abre o arquivo criado / o "w' cria e escreve o arquivo
-	fprintf(file, "CPF: "); //O fprint é igual o printf só que é escrito no sistema
-	fprintf(file,cpf); //O fprint é igual o printf só que é escrito no sistema, e nesse caso escreve a string cpf
-	fprintf(file, "  "); //O fprint é igual o printf só que é escrito no sistema
+	fprintf(file, "CPF: "); //O fprintf é igual o printf só que é escrito no sistema
+	fprintf(file,cpf); //O fprintf é igual o printf só que é escrito no sistema, e nesse caso escreve a string cpf
+	fprintf(file, "  "); //O fprintf é igual o printf só que é escrito no sistema
 	fclose(file); //Fecha o arquivo
 	
 	printf("Digite o nome para ser cadastrado: "); //Pede para que o usuário coloque suas infomções
 	scanf("%s", nome); //"%s" Salva dentro de uma string, no caso a string nome
 	
 	file = fopen(arquivo, "a"); //Abre o arquivo criado / o "a' atualiza o arquivo já criado
-	fprintf(file, "Nome: "); //O fprint é igual o printf só que é escrito no sistema
-	fprintf(file,nome); //O fprint é igual o printf só que é escrito no sistema, e nesse caso escreve a string nome
-	fprintf(file, "  "); //O fprint é igual o printf só que é escrito no sistema
+	fprintf(file, "Nome: "); //O fprintf é igual o printf só que é escrito no sistema
+	fprintf(file,nome); //O fprintf é igual o printf só que é escrito no sistema, e nesse caso escreve a string nome
+	fprintf(file, "  "); //O fprintf é igual o printf só que é escrito no sistema
 	fclose(file); //Fecha o arquivo
 	
 	printf("Digite o sobrenome para ser cadastrado: "); //Pede para que o usuário coloque suas infomções
 	scanf("%s", sobrenome); //"%s' Salva dentro de uma string, no caso a string sobrenome
 	
 	file = fopen(arquivo, "a"); //Abre o arquivo criado / o "a' atualiza o arquivo já criado
-	fprintf(file, "Sobrenome: "); //O fprint é igual o printf só que é escrito no sistema
-	fprintf(file,sobrenome); //O fprint é igual o printf só que é escrito no sistema, e nesse caso escreve a string sobrenome
-	fprintf(file, "  "); //O fprint é igual o printf só que é escrito no sistema
+	fprintf(file, "Sobrenome: "); //O fprintf é igual o printf só que é escrito no sistema
+	fprintf(file,sobrenome); //O fprintf é igual o printf só que é escrito no sistema, e nesse caso escreve a string sobrenome
+	fprintf(file, "  "); //O fprintf é igual o printf só que é escrito no sistema
 	fclose(file); //Fecha o arquivo
 
 	printf ("Digite o cargo para ser cadastrado: "); //Pede para que o usuário coloque suas infomções
 	scanf("%s", cargo); //"%s' Salva dentro de uma string, no caso a string cargo
 	
 	file = fopen(arquivo, "a"); //Abre o arquivo criado / o "a' atualiza o arquivo já criado
-	fprintf(file, "Cargo: "); //O fprint é igual o printf só que é escrito no sistema
-	fprintf(file,cargo); //O fprint é igual o printf só que é escrito no sistema, e nesse caso escreve a string cargo
-	fprintf(file, "  "); //O fprint é igual o printf só que é escrito no sistema
+	fprintf(file, "Cargo: "); //O fprintf é igual o printf só que é escrito no sistema
+	fprintf(file,cargo); //O fprintf é igual o printf só que é escrito no sistema, e nesse caso escreve a string cargo
+	fprintf(file, "  "); //O fprintf é igual o printf só que é escrito no sistema
 	fclose(file); //Fecha o arquivo
 	
 	system("pause"); //Mantém as informções na tela
@@ -134,7 +134,8 @@ int main() //Função principal do sistema
     	printf("Ecolha seu menu:\n\n"); //Pede para o usuário escolher uma das opções abaixo
     	printf("\t1 - Registrar Nomes\n"); //Primeira opção / O "\t1 -' cria um número da frente na opção
    	    printf("\t2 - Consultar Nomes\n"); //Segunda opção / O "\t2 -' cria o número da frente na opção
-    	printf("\t3 - Deletar Nomes\n\n\n"); //Terceira opção / O "\t2 -' cria o número da frente na opção
+    	printf("\t3 - Deletar Nomes\n"); //Terceira opção / O "\t2 -' cria o número da frente na opção
+    	printf("\t4 - Sair do Sistema\n\n");
         printf("Opção:  "); //Final do menu
 	
     	scanf("%d", &opcao); //Armazenando a escolha do usuário
@@ -155,6 +156,11 @@ int main() //Função principal do sistema
     	    	deletar(); //Chamada de funções
 		    break; //Pausa a função puxada para que não seja um loop eterno
 		    
+		    case 4:
+		    	printf("Obrigado por ultilizar o sistema!\n");
+		    	return 0;
+		    	break;
+		    	
 		    default: //Opção que será escolhida / Nesse caso é a opção inexistente, ou seja, qualquer opção que não seja nenhuma das acima 
 		    	printf("Essa opção não existe\n\n"); //Informa o usuário
 		        system("pause"); //Mantém as informações na tela
