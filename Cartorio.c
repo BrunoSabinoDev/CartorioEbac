@@ -121,52 +121,65 @@ int main() //Função principal do sistema
 {
 	int opcao=0; //"opcao' É a variavel que salva as funções / O "=0' é muito importante pois é ele que diz que aquela variavel não esta disponível
 	int x=1; //É a repetição feita pelo "for'
+	char senhadigitada[10]="a";
+	int comparacao;
 	
-	for(x=1;x=1;) //"for' Faz uma retição o quantas vezes for pedido, nesse caso o "x=1;x=1;' cria um loop e sempre sera repetido
+	printf("*** Cartório da EBAC ***\n\n");
+	printf("Login de Administrador!\n\n");
+	printf("Digite sua senha: ");
+	scanf("%s", senhadigitada);
 	
+	comparacao = strcmp(senhadigitada, "admin");
+	
+	if(comparacao == 0)
 	{
+		system("cls");
+		for(x=1;x=1;) //"for' Faz uma retição o quantas vezes for pedido, nesse caso o "x=1;x=1;' cria um loop e sempre será repetido
+		{
 	
-	system("cls"); //Responável por limpar a tela
 	
-    	setlocale(LC_ALL, "Portuguese"); //Língua escolhida para alocação do texto
+    		setlocale(LC_ALL, "Portuguese"); //Língua escolhida para alocação do texto
 
-	    printf("*** Cartório da EBAC ***\n\n"); //Inicio do menu
-    	printf("Ecolha seu menu:\n\n"); //Pede para o usuário escolher uma das opções abaixo
-    	printf("\t1 - Registrar Nomes\n"); //Primeira opção / O "\t1 -' cria um número da frente na opção
-   	    printf("\t2 - Consultar Nomes\n"); //Segunda opção / O "\t2 -' cria o número da frente na opção
-    	printf("\t3 - Deletar Nomes\n"); //Terceira opção / O "\t2 -' cria o número da frente na opção
-    	printf("\t4 - Sair do Sistema\n\n");
-        printf("Opção:  "); //Final do menu
+			printf("*** Cartório da EBAC ***\n\n"); //Inicio do menu
+    		printf("Ecolha seu menu:\n\n"); //Pede para o usuário escolher uma das opções abaixo
+    		printf("\t1 - Registrar Nomes\n"); //Primeira opção / O "\t1 -' cria um número da frente na opção
+			printf("\t2 - Consultar Nomes\n"); //Segunda opção / O "\t2 -' cria o número da frente na opção
+    		printf("\t3 - Deletar Nomes\n"); //Terceira opção / O "\t2 -' cria o número da frente na opção
+	    	printf("\t4 - Sair do Sistema\n\n");
+	        printf("Opção:  "); //Final do menu
 	
-    	scanf("%d", &opcao); //Armazenando a escolha do usuário
+    		scanf("%d", &opcao); //Armazenando a escolha do usuário
 	
-    	system("cls"); //Responsável por limpar a tela 
+    		system("cls"); //Responsável por limpar a tela 
     	
-    	switch(opcao) //Inicio da seleção do menu
-    	{
-    		case 1: //Opção que será escolhida / Nesse caso o número é o mesmo das opções de cima e serve para puxar a funçao int ""
+    		switch(opcao) //Inicio da seleção do menu
+    		{
+    			case 1: //Opção que será escolhida / Nesse caso o número é o mesmo das opções de cima e serve para puxar a funçao int ""
 		        registrar(); //Chamada de funções // Puxa a função int registrar
-    		break; //Pausa a função puxada para que não seja um loop eterno
+    			break; //Pausa a função puxada para que não seja um loop eterno
     		
-    		case 2: //Opção que será escolhida / Nesse caso o número é o mesmo das opções de cima e serve para puxar a funçao int ""
-    			consultar(); //Chamada de funções
-    	    break; //Pausa a função puxada para que não seja um loop eterno
+    			case 2: //Opção que será escolhida / Nesse caso o número é o mesmo das opções de cima e serve para puxar a funçao int ""
+    				consultar(); //Chamada de funções
+    		    break; //Pausa a função puxada para que não seja um loop eterno
     	    
-    	    case 3: //Opção que será escolhida / Nesse caso o número é o mesmo das opções de cima e serve para puxar a funçao int ""
-    	    	deletar(); //Chamada de funções
-		    break; //Pausa a função puxada para que não seja um loop eterno
-		    
-		    case 4:
-		    	printf("Obrigado por ultilizar o sistema!\n");
-		    	return 0;
-		    	break;
+    		    case 3: //Opção que será escolhida / Nesse caso o número é o mesmo das opções de cima e serve para puxar a funçao int ""
+    		    	deletar(); //Chamada de funções
+			    break; //Pausa a função puxada para que não seja um loop eterno
+			    
+		 		case 4:
+					printf("Obrigado por ultilizar o sistema!\n"); //Mensagem de agradecimento ao fechar o sistema
+			    	return 0; //Retorna para o status inicial, ou seja, fecha o sistema
+			    break; //Pausa o comando para que o sistema não seja aberto novamnete
 		    	
-		    default: //Opção que será escolhida / Nesse caso é a opção inexistente, ou seja, qualquer opção que não seja nenhuma das acima 
-		    	printf("Essa opção não existe\n\n"); //Informa o usuário
-		        system("pause"); //Mantém as informações na tela
-		    break; //Pausa a função puxada para que não seja um loop eterno
-		} //Final da seleção
-   
-    } 
+			    default: //Opção que será escolhida / Nesse caso é a opção inexistente, ou seja, qualquer opção que não seja nenhuma das acima 
+			    	printf("Essa opção não existe\n\n"); //Informa o usuário
+			        system("pause"); //Mantém as informações na tela
+			    break; //Pausa a função puxada para que não seja um loop eterno
+			} //Final da seleção
+		}
+	}
+	else
+		system("cls");
+		printf("\n");
+		printf("Senha Incorreta!\n");
 }
-
